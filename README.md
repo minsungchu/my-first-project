@@ -1,7 +1,7 @@
 # my-first-project
 
-## 환경설정
+## 사전준비
 
 1. IntelliJ 설치
-2. IntelliJ를 이용하여 Spring Boot 시작, Hello World 출력
-   참고하이트 : https://vmpo.tistory.com/7
+2. IntelliJ를 이용하여 Spring Boot 시작, Hello World 출력(https://vmpo.tistory.com/7)
+3. REST API 테스트(https://vmpo.tistory.com/27?category=730732) - 영화진흥위원회 오픈API

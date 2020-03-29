@@ -15,7 +15,9 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
@@ -49,8 +51,14 @@ public class RestApi {
             result.put("body", resultMap.getBody());
 
             //데이터를 제대로 전달 받았는지 확인 string형태로 파싱해줌
+            LinkedHashMap lm = (LinkedHashMap)resultMap.getBody().get("boxOfficeResult");
+            ArrayList<Map> dboxoffList = (ArrayList<Map>)lm.get("dailyBoxOfficeList");
+            LinkedHashMap mnList = new LinkedHashMap<>();
+            for(Map obj:dboxoffList){
+                mnList.put(obj.get("rnum"),obj.get("movieNm"));
+            }
             ObjectMapper mapper = new ObjectMapper();
-            jsonInString = mapper.writeValueAsString(resultMap.getBody());
+            jsonInString = mapper.writeValueAsString(mnList);
         }
         catch(HttpClientErrorException | HttpServerErrorException e){
             result.put("statusCode", e.getRawStatusCode());
