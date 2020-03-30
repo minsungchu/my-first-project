@@ -68,7 +68,7 @@ public class RestApi {
         }
         catch(Exception e){
             result.put("statusCode", "999");
-            result.put("boty", "exception 오류");
+            result.put("body", "exception 오류");
             System.out.println(e.toString());
         }
 
