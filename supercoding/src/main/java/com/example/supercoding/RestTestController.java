@@ -1,6 +1,7 @@
 package com.example.supercoding;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
@@ -11,7 +12,7 @@ import java.net.URL;
 @RestController
 public class RestTestController {
 
-    @GetMapping("/apitest")
+    @RequestMapping(value = "/apitest", method={RequestMethod.GET,RequestMethod.POST})
     public String callapihttp(){
         StringBuffer result = new StringBuffer();
         try{
@@ -28,15 +29,16 @@ public class RestTestController {
             BufferedReader br = new BufferedReader(new InputStreamReader(urlconnection.getInputStream(),"UTF-8"));
 
             String returnLine;
-            result.append("<xmp>");
+
             while((returnLine = br.readLine()) != null){
-                result.append(returnLine+"\n");
+                result.append(returnLine);
+                System.out.println(br.readLine());
             }
             urlconnection.disconnect();
         }
         catch(Exception e){
             e.printStackTrace();
         }
-        return result+"</xmp>";
+        return result.toString();
     }
 }
