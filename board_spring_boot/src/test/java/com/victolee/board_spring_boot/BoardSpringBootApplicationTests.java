@@ -1,10 +1,10 @@
-package com.victolee.board;
+package com.victolee.board_spring_boot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BoardApplicationTests {
+class BoardSpringBootApplicationTests {
 
     @Test
     void contextLoads() {
