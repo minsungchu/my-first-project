@@ -27,3 +27,6 @@
       - 데이터베이스 연결시 https://csy7792.tistory.com/63 참조하여 mariadb 연결 >>> dependencies, reimport gradle, application.properties 입력 참고할 것.
 4. JPA 설정(https://victorydntmd.tistory.com/323?category=764331)
    - yml이 아닌, property로 설정함.
+5. 게시판(1)-준비작업(https://victorydntmd.tistory.com/325?category=764331)
+6. 게시판(2)-게시글추가하기(https://victorydntmd.tistory.com/326)
+   1. 에러 발생 : 그대로 타이핑 하고 컴파일 했는데, 에러남. 데이터베이스 관련인듯...

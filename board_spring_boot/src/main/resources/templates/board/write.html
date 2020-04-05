@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Board | Write</title>
 </head>
-<body>
 
+<body>
+    <form action="/post" method="post">
+        <div>
+            <span>Title : </span>
+            <input type="text" name="title">
+        </div>
+        <div>
+            <span>Author : </span>
+            <input type="text" name="writer">
+        </div>
+        <textarea name="content" cols="30" rows="10"></textarea>
+        <input type="submit" value="post">
+
+    </form>
 </body>
+
 </html>
